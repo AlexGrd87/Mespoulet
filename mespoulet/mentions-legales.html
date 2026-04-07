@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentions Légales – Mespoulet Distribution</title>
+
+    <!-- ── SEO ── -->
+    <meta name="description" content="Mentions légales de Mespoulet Distribution – SIREN 424 360 113. Informations légales, éditeur, hébergeur et politique de confidentialité." />
+    <meta name="robots" content="noindex, follow" />
+    <!-- noindex : les mentions légales n'ont pas besoin d'apparaître dans Google -->
+    <meta name="author" content="Mespoulet Distribution" />
+    <link rel="icon" type="image/png" href="Images/logo-mespoulet.png" />
+    <link rel="apple-touch-icon" href="Images/logo-mespoulet.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary:   "#1B3F8B",
+              secondary: "#F0A500",
+              light:     "#F4F6FA",
+            },
+            fontFamily: {
+              sans:  ["Sora", "sans-serif"],
+              serif: ["Sora", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-light text-gray-800">
+
+    <!-- ============================================================
+         HEADER – identique aux autres pages
+    ============================================================ -->
+    <header class="sticky top-0 z-50 bg-primary shadow-md">
+
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="Images/logo-mespoulet.png" alt="Logo Mespoulet Distribution" class="h-16 w-auto" />
+          <span class="font-serif text-2xl font-bold text-white tracking-wide">
+            Mespoulet <span class="text-secondary">Distribution</span>
+          </span>
+        </a>
+
+        <!-- NAV DESKTOP -->
+        <nav class="hidden md:flex gap-8">
+          <a href="index.html"    class="text-white hover:text-secondary transition-colors font-medium">Accueil</a>
+          <a href="about.html"    class="text-white hover:text-secondary transition-colors font-medium">L'entreprise</a>
+          <a href="produits.html" class="text-white hover:text-secondary transition-colors font-medium">Nos produits</a>
+          <a href="contact.html"  class="text-white hover:text-secondary transition-colors font-medium">Contact</a>
+        </nav>
+
+        <!-- BOUTON HAMBURGER MOBILE -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Ouvrir le menu">
+          <i class="fa-solid fa-bars" id="menu-icon"></i>
+        </button>
+
+      </div>
+
+      <!-- MENU MOBILE -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-white/20">
+        <nav class="flex flex-col px-6 py-4 gap-4">
+          <a href="index.html"    class="text-white hover:text-secondary transition-colors font-medium py-1">Accueil</a>
+          <a href="about.html"    class="text-white hover:text-secondary transition-colors font-medium py-1">L'entreprise</a>
+          <a href="produits.html" class="text-white hover:text-secondary transition-colors font-medium py-1">Nos produits</a>
+          <a href="contact.html"  class="text-white hover:text-secondary transition-colors font-medium py-1">Contact</a>
+        </nav>
+      </div>
+
+      <script src="js/menu.js"></script>
+
+    </header>
+
+
+    <!-- ============================================================
+         BANNIÈRE DE PAGE
+    ============================================================ -->
+
+    <!-- h-48 : bannière plus petite que les autres pages, contenu purement informatif -->
+    <section class="h-48 bg-primary flex items-center justify-center">
+      <div class="text-center px-6">
+        <p class="text-secondary uppercase tracking-widest text-sm mb-3">Informations légales</p>
+        <h1 class="font-serif text-4xl font-bold text-white">Mentions Légales</h1>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTENU DES MENTIONS LÉGALES
+    ============================================================ -->
+
+    <section class="py-16 bg-white">
+      <!-- max-w-4xl : contenu plus étroit pour faciliter la lecture des textes longs -->
+      <div class="max-w-4xl mx-auto px-6">
+
+        <!-- ARTICLE 1 – Éditeur du site -->
+        <!-- mb-12 : grande marge entre chaque article -->
+        <article class="mb-12">
+
+          <!-- flex items-center gap-3 mb-4 : icône + titre côte à côte -->
+          <div class="flex items-center gap-3 mb-4">
+            <!-- w-8 h-8 bg-secondary rounded-full : petit rond jaune | flex items-center justify-center -->
+            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <!-- text-white text-sm : chiffre blanc centré dans le rond -->
+              <span class="text-white text-sm font-bold">1</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-primary">Éditeur du site</h2>
+          </div>
+
+          <!-- bg-light rounded-xl p-6 : bloc d'info sur fond légèrement bleuté -->
+          <div class="bg-light rounded-xl p-6 space-y-2 text-gray-700">
+            <p><span class="font-semibold text-gray-900">Raison sociale :</span> Mespoulet Distribution</p>
+            <p><span class="font-semibold text-gray-900">Forme juridique :</span> SAS (Société par Actions Simplifiée)</p>
+            <p><span class="font-semibold text-gray-900">SIREN :</span> 424 360 113</p>
+            <p><span class="font-semibold text-gray-900">Siège social :</span> 38 Rue Maurice Utrillo, 87000 Limoges</p>
+            <p><span class="font-semibold text-gray-900">Téléphone :</span>
+              <a href="tel:+33555345130" class="text-primary hover:underline">05 55 34 51 30</a>
+            </p>
+            <p><span class="font-semibold text-gray-900">Président :</span> Simon MESPOULET</p>
+            <p><span class="font-semibold text-gray-900">Directeur Général :</span> Jean-Jacques MESPOULET</p>
+          </div>
+
+        </article>
+
+
+        <!-- ARTICLE 2 – Hébergement -->
+        <article class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-sm font-bold">2</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-primary">Hébergement</h2>
+          </div>
+          <div class="bg-light rounded-xl p-6 text-gray-700">
+            <p class="mb-2">Ce site est hébergé par :</p>
+            <!-- leading-relaxed : interligne confortable -->
+            <p class="leading-relaxed">
+              <span class="font-semibold text-gray-900">Nom de l'hébergeur</span><br />
+              Adresse de l'hébergeur<br />
+              Site web : <span class="text-primary">www.hebergeur.fr</span>
+            </p>
+            <!-- text-sm text-gray-500 mt-3 : note discrète -->
+            <p class="text-sm text-gray-500 mt-3">
+              * À compléter avec les informations de votre hébergeur (OVH, Ionos, O2Switch...)
+            </p>
+          </div>
+        </article>
+
+
+        <!-- ARTICLE 3 – Propriété intellectuelle -->
+        <article class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-sm font-bold">3</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-primary">Propriété intellectuelle</h2>
+          </div>
+          <!-- prose : classe utilitaire pour le texte long | text-gray-700 leading-relaxed -->
+          <div class="text-gray-700 leading-relaxed space-y-4">
+            <p>
+              L'ensemble du contenu de ce site (textes, images, logos, graphismes) est la propriété
+              exclusive de <strong>Mespoulet Distribution</strong> et est protégé par les lois françaises
+              et internationales relatives à la propriété intellectuelle.
+            </p>
+            <p>
+              Toute reproduction, représentation, modification ou exploitation totale ou partielle
+              des contenus de ce site sans autorisation expresse est interdite et constituerait
+              une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la Propriété Intellectuelle.
+            </p>
+          </div>
+        </article>
+
+
+        <!-- ARTICLE 4 – Protection des données personnelles (RGPD) -->
+        <article class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-sm font-bold">4</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-primary">Protection des données personnelles</h2>
+          </div>
+          <div class="text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Conformément au Règlement Général sur la Protection des Données (RGPD – Règlement UE 2016/679)
+              et à la loi Informatique et Libertés du 6 janvier 1978, vous disposez d'un droit d'accès,
+              de rectification, de suppression et d'opposition concernant vos données personnelles.
+            </p>
+            <p>
+              Les données collectées via le formulaire de contact (nom, prénom, email, téléphone, message)
+              sont utilisées exclusivement pour répondre à vos demandes et ne sont en aucun cas
+              transmises à des tiers.
+            </p>
+            <p>
+              Pour exercer vos droits, contactez-nous à l'adresse :
+              <!-- text-primary hover:underline : lien discret dans le texte -->
+              <a href="tel:+33555345130" class="text-primary hover:underline">05 55 34 51 30</a>
+              ou par courrier au 38 Rue Maurice Utrillo, 87000 Limoges.
+            </p>
+          </div>
+        </article>
+
+
+        <!-- ARTICLE 5 – Cookies -->
+        <article class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-sm font-bold">5</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-primary">Cookies</h2>
+          </div>
+          <div class="text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Ce site n'utilise pas de cookies de tracking ou publicitaires. Seuls des cookies
+              techniques strictement nécessaires au bon fonctionnement du site peuvent être utilisés.
+            </p>
+            <p>
+              La carte Google Maps intégrée sur la page Contact peut déposer des cookies tiers
+              dans le cadre des services Google. Vous pouvez gérer ces préférences depuis les
+              paramètres de votre navigateur.
+            </p>
+          </div>
+        </article>
+
+
+        <!-- ARTICLE 6 – Limitation de responsabilité -->
+        <article class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-sm font-bold">6</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-primary">Limitation de responsabilité</h2>
+          </div>
+          <div class="text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Mespoulet Distribution s'efforce d'assurer l'exactitude et la mise à jour des informations
+              diffusées sur ce site. Toutefois, la société ne peut garantir l'exactitude, la précision
+              ou l'exhaustivité des informations mises à disposition.
+            </p>
+            <p>
+              En conséquence, Mespoulet Distribution décline toute responsabilité pour tout dommage
+              résultant d'une information imprécise ou incomplète figurant sur ce site.
+            </p>
+          </div>
+        </article>
+
+
+        <!-- DATE DE MISE À JOUR -->
+        <!-- border-t border-gray-200 pt-8 : ligne de séparation + espace -->
+        <!-- text-sm text-gray-500 text-center : texte discret centré -->
+        <div class="border-t border-gray-200 pt-8 text-sm text-gray-500 text-center">
+          <p>Mentions légales mises à jour le 5 avril 2026.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER – identique aux autres pages
+    ============================================================ -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          <div>
+            <h4 class="text-white font-serif text-xl font-bold mb-4">
+              Mespoulet <span class="text-secondary">Distribution</span>
+            </h4>
+            <p class="leading-relaxed">
+              Grossiste en boissons à Limoges depuis 1999.<br />
+              Membre du réseau national C10.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Navigation</h4>
+            <ul class="flex flex-col gap-2">
+              <li><a href="index.html"    class="hover:text-white transition-colors">Accueil</a></li>
+              <li><a href="about.html"    class="hover:text-white transition-colors">L'entreprise</a></li>
+              <li><a href="produits.html" class="hover:text-white transition-colors">Nos produits</a></li>
+              <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Coordonnées</h4>
+            <address class="not-italic flex flex-col gap-2">
+              <span>38 Rue Maurice Utrillo</span>
+              <span>87000 Limoges</span>
+              <a href="tel:+33555345130" class="hover:text-white transition-colors">05 55 34 51 30</a>
+            </address>
+          </div>
+
+        </div>
+
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
+          <p>© 2026 Mespoulet Distribution – Tous droits réservés</p>
+        </div>
+
+      </div>
+    </footer>
+
+    <button id="scroll-top-btn"
+            aria-label="Retour en haut de page"
+            class="fixed bottom-6 right-6 z-50 opacity-0 pointer-events-none transition-opacity duration-300 bg-primary hover:bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <script src="js/scroll-top.js"></script>
+
+    <script src="js/transitions.js"></script>
+    <script src="js/cookies.js"></script>
+
+  </body>
+</html>

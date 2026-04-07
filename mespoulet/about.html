@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'Entreprise – Mespoulet Distribution</title>
+
+    <!-- ── SEO ── -->
+    <meta name="description" content="Fondée en 1999 par la famille Mespoulet, notre entreprise est un grossiste en boissons basé à Limoges, membre du réseau C10. Découvrez notre histoire et nos valeurs." />
+    <meta name="keywords" content="Mespoulet Distribution histoire, grossiste boissons famille Limoges, réseau C10 Haute-Vienne, entreprise boissons Nouvelle-Aquitaine" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Mespoulet Distribution" />
+    <link rel="icon" type="image/png" href="Images/logo-mespoulet.png" />
+    <link rel="apple-touch-icon" href="Images/logo-mespoulet.png" />
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="L'Entreprise – Mespoulet Distribution" />
+    <meta property="og:description" content="25 ans d'expertise dans la distribution de boissons en Haute-Vienne. Une entreprise familiale, membre du réseau national C10." />
+    <meta property="og:image" content="Images/logo-mespoulet.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS – feuille de style des animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary:   "#1B3F8B",
+              secondary: "#F0A500",
+              light:     "#F4F6FA",
+            },
+            fontFamily: {
+              sans:  ["Sora", "sans-serif"],
+              serif: ["Sora", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-light text-gray-800">
+
+    <!-- ============================================================
+         HEADER – identique à index.html
+    ============================================================ -->
+    <header class="sticky top-0 z-50 bg-primary shadow-md">
+
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="Images/logo-mespoulet.png" alt="Logo Mespoulet Distribution" class="h-16 w-auto" />
+          <span class="font-serif text-2xl font-bold text-white tracking-wide">
+            Mespoulet <span class="text-secondary">Distribution</span>
+          </span>
+        </a>
+
+        <nav class="hidden md:flex gap-8">
+          <a href="index.html"    class="text-white hover:text-secondary transition-colors font-medium">Accueil</a>
+          <a href="about.html"    class="text-secondary font-medium">L'entreprise</a>
+          <a href="produits.html" class="text-white hover:text-secondary transition-colors font-medium">Nos produits</a>
+          <a href="contact.html"  class="text-white hover:text-secondary transition-colors font-medium">Contact</a>
+        </nav>
+
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Ouvrir le menu">
+          <i class="fa-solid fa-bars" id="menu-icon"></i>
+        </button>
+
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-white/20">
+        <nav class="flex flex-col px-6 py-4 gap-4">
+          <a href="index.html"    class="text-white hover:text-secondary transition-colors font-medium py-1">Accueil</a>
+          <a href="about.html"    class="text-secondary font-medium py-1">L'entreprise</a>
+          <a href="produits.html" class="text-white hover:text-secondary transition-colors font-medium py-1">Nos produits</a>
+          <a href="contact.html"  class="text-white hover:text-secondary transition-colors font-medium py-1">Contact</a>
+        </nav>
+      </div>
+
+      <script src="js/menu.js"></script>
+
+    </header>
+
+
+    <!-- ============================================================
+         BANNIÈRE DE PAGE
+    ============================================================ -->
+
+    <section class="relative h-72 flex items-center justify-center">
+
+      <!-- Image de fond : entrepôt/logistique de boissons -->
+      <div class="absolute inset-0 bg-cover bg-center"
+           style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?fit=crop&w=1920&h=600&q=80')">
+      </div>
+      <div class="absolute inset-0 bg-primary/80"></div>
+
+      <div class="relative z-10 text-center px-6">
+        <p class="text-secondary uppercase tracking-widest text-sm mb-3">Qui sommes-nous</p>
+        <h1 class="font-serif text-5xl font-bold text-white">L'Entreprise</h1>
+        <p class="mt-4 text-gray-300 text-lg">Une histoire familiale au service des boissons</p>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         SECTION HISTOIRE
+    ============================================================ -->
+
+    <!-- py-20 bg-white : section blanche bien aérée -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- GRILLE 2 COLONNES : texte à gauche, image à droite -->
+        <!-- md:grid-cols-2 : côte à côte sur desktop | gap-16 : grand espace entre les deux colonnes -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+          <!-- COLONNE TEXTE -->
+          <!-- data-aos="fade-right" : glisse depuis la gauche -->
+          <div data-aos="fade-right">
+            <p class="text-secondary uppercase tracking-widest text-sm mb-3">Notre histoire</p>
+            <h2 class="font-serif text-4xl font-bold text-primary mb-6">
+              25 ans au service des boissons en Haute-Vienne
+            </h2>
+            <!-- leading-relaxed : interligne confortable pour les longs textes | space-y-4 : espace entre paragraphes -->
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Fondée en <strong class="text-primary">1999</strong> par la famille Mespoulet,
+                notre entreprise s'est construite sur une passion commune : mettre les meilleures
+                boissons entre les mains des professionnels et des particuliers de la région.
+              </p>
+              <p>
+                Depuis plus de 25 ans, nous sélectionnons avec soin vins, spiritueux, bières
+                et softs pour offrir une gamme complète et cohérente, adaptée aux besoins
+                de nos clients en Nouvelle-Aquitaine.
+              </p>
+              <p>
+                Aujourd'hui dirigée par <strong class="text-primary">Simon Mespoulet</strong>
+                (Président) et <strong class="text-primary">Jean-Jacques Mespoulet</strong>
+                (Directeur Général), l'entreprise continue de grandir tout en restant
+                fidèle à ses valeurs : proximité, qualité et service.
+              </p>
+            </div>
+          </div>
+
+          <!-- COLONNE IMAGE -->
+          <!-- rounded-2xl overflow-hidden shadow-lg : coins arrondis, ombre portée -->
+          <!-- data-aos="fade-left" : glisse depuis la droite, symétrique avec le texte -->
+          <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="fade-left">
+            <!-- h-96 : hauteur fixe 384px | w-full object-cover : remplit toute la zone -->
+            <img src="Images/comptoir-des-vignes.webp"
+                 alt="Mespoulet Distribution - Limoges"
+                 class="h-96 w-full object-cover"
+                 loading="lazy" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION CHIFFRES CLÉS
+    ============================================================ -->
+
+    <section class="bg-primary py-16">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- data-aos="fade-up" : le titre monte en fondu -->
+        <div class="text-center mb-12" data-aos="fade-up">
+          <p class="text-secondary uppercase tracking-widest text-sm mb-2">En chiffres</p>
+          <h2 class="font-serif text-4xl font-bold text-white">Mespoulet en quelques chiffres</h2>
+        </div>
+
+        <!-- GRILLE 4 CHIFFRES -->
+        <!-- grid grid-cols-2 md:grid-cols-4 : 2 col mobile, 4 col desktop -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+          <!-- CHIFFRE 1 -->
+          <div data-aos="zoom-in">
+            <!-- text-5xl font-bold text-secondary : grand chiffre en jaune -->
+            <p class="text-5xl font-bold text-secondary">1999</p>
+            <!-- text-white/80 mt-2 : description en blanc légèrement transparent -->
+            <p class="text-white/80 mt-2 text-sm">Année de création</p>
+          </div>
+
+          <!-- CHIFFRE 2 -->
+          <div data-aos="zoom-in" data-aos-delay="100">
+            <p class="text-5xl font-bold text-secondary">+25</p>
+            <p class="text-white/80 mt-2 text-sm">Ans d'expérience</p>
+          </div>
+
+          <!-- CHIFFRE 3 -->
+          <div data-aos="zoom-in" data-aos-delay="200">
+            <p class="text-5xl font-bold text-secondary">+20</p>
+            <p class="text-white/80 mt-2 text-sm">Collaborateurs</p>
+          </div>
+
+          <!-- CHIFFRE 4 -->
+          <div data-aos="zoom-in" data-aos-delay="300">
+            <p class="text-5xl font-bold text-secondary">10M€</p>
+            <p class="text-white/80 mt-2 text-sm">De chiffre d'affaires</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION VALEURS
+    ============================================================ -->
+
+    <section class="py-20 bg-light">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-14" data-aos="fade-up">
+          <p class="text-secondary uppercase tracking-widest text-sm mb-2">Ce qui nous guide</p>
+          <h2 class="font-serif text-4xl font-bold text-primary">Nos valeurs</h2>
+        </div>
+
+        <!-- GRILLE 3 VALEURS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- VALEUR 1 – Proximité -->
+          <!-- bg-white rounded-2xl p-8 shadow-sm hover:shadow-md : carte blanche avec ombre au survol -->
+          <!-- text-center : tout centré dans la carte -->
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+            <!-- w-16 h-16 : cercle de 64px | bg-primary/10 : fond bleu très léger -->
+            <!-- rounded-full flex items-center justify-center mx-auto mb-6 : cercle centré avec marge basse -->
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <!-- text-primary text-2xl : icône bleu, taille moyenne -->
+              <i class="fa-solid fa-handshake text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-primary text-xl mb-3">Proximité</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Ancrés en Haute-Vienne depuis 25 ans, nous connaissons notre territoire
+              et entretenons des relations durables avec nos clients.
+            </p>
+          </div>
+
+          <!-- VALEUR 2 – Qualité -->
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fa-solid fa-star text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-primary text-xl mb-3">Qualité</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Chaque référence de notre catalogue est soigneusement sélectionnée
+              pour garantir le meilleur rapport qualité/prix à nos clients.
+            </p>
+          </div>
+
+          <!-- VALEUR 3 – Service -->
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fa-solid fa-truck text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-primary text-xl mb-3">Service</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Livraison régulière, réactivité et conseils personnalisés —
+              nous sommes à vos côtés à chaque étape de votre projet boissons.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION RÉSEAU C10
+    ============================================================ -->
+
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- GRILLE 2 COLONNES : logo à gauche, texte à droite -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+          <!-- LOGO C10 centré dans un encadré -->
+          <!-- bg-light rounded-2xl p-12 flex items-center justify-center -->
+          <div class="bg-light rounded-2xl p-12 flex items-center justify-center" data-aos="fade-right">
+            <!-- w-48 : logo large pour bien le mettre en valeur -->
+            <img src="Images/logo-c10-neutre.png" alt="Réseau C10" class="w-48 h-auto" loading="lazy" />
+          </div>
+
+          <!-- TEXTE -->
+          <div data-aos="fade-left">
+            <p class="text-secondary uppercase tracking-widest text-sm mb-3">Notre réseau</p>
+            <h2 class="font-serif text-4xl font-bold text-primary mb-6">
+              Membre du réseau C10
+            </h2>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Mespoulet Distribution est fier d'être membre du groupement national
+                <strong class="text-primary">C10</strong>, premier réseau français
+                de distributeurs de boissons indépendants.
+              </p>
+              <p>
+                Cette appartenance nous permet de vous garantir l'accès aux
+                meilleures marques du marché, à des tarifs négociés, tout en
+                conservant la flexibilité et la proximité d'un acteur local.
+              </p>
+            </div>
+
+            <!-- LISTE D'AVANTAGES C10 -->
+            <!-- mt-6 space-y-3 : liste espacée avec marge haute -->
+            <ul class="mt-6 space-y-3">
+              <!-- flex items-center gap-3 : icône et texte côte à côte -->
+              <li class="flex items-center gap-3">
+                <!-- text-secondary : icône en jaune | fa-circle-check : icône coche -->
+                <i class="fa-solid fa-circle-check text-secondary"></i>
+                <span class="text-gray-700">Accès aux meilleures marques nationales</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-secondary"></i>
+                <span class="text-gray-700">Tarifs négociés au niveau national</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-secondary"></i>
+                <span class="text-gray-700">Formation et accompagnement continu</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-secondary"></i>
+                <span class="text-gray-700">Réseau de 200+ distributeurs en France</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BANDEAU CALL TO ACTION
+    ============================================================ -->
+
+    <section class="bg-primary py-16 text-center">
+      <div class="max-w-2xl mx-auto px-6">
+        <h2 class="font-serif text-3xl font-bold text-white mb-4" data-aos="fade-up">
+          Envie de travailler avec nous ?
+        </h2>
+        <p class="text-gray-300 mb-8 leading-relaxed">
+          Que vous soyez professionnel ou particulier, contactez-nous pour découvrir
+          notre offre et construire ensemble votre projet boissons.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="contact.html"
+             class="inline-block bg-secondary hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full transition-colors">
+            Nous contacter
+          </a>
+          <a href="produits.html"
+             class="inline-block border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 rounded-full transition-colors">
+            Voir nos produits
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER – identique à index.html
+    ============================================================ -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          <div>
+            <h4 class="text-white font-serif text-xl font-bold mb-4">
+              Mespoulet <span class="text-secondary">Distribution</span>
+            </h4>
+            <p class="leading-relaxed">
+              Grossiste en boissons à Limoges depuis 1999.<br />
+              Membre du réseau national C10.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Navigation</h4>
+            <ul class="flex flex-col gap-2">
+              <li><a href="index.html"    class="hover:text-white transition-colors">Accueil</a></li>
+              <li><a href="about.html"    class="hover:text-white transition-colors">L'entreprise</a></li>
+              <li><a href="produits.html" class="hover:text-white transition-colors">Nos produits</a></li>
+              <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Coordonnées</h4>
+            <address class="not-italic flex flex-col gap-2">
+              <span>38 Rue Maurice Utrillo</span>
+              <span>87000 Limoges</span>
+              <a href="tel:+33555345130" class="hover:text-white transition-colors">05 55 34 51 30</a>
+            </address>
+          </div>
+
+        </div>
+
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
+          <p>© 2026 Mespoulet Distribution – Tous droits réservés</p>
+        </div>
+
+      </div>
+    </footer>
+
+    <button id="scroll-top-btn"
+            aria-label="Retour en haut de page"
+            class="fixed bottom-6 right-6 z-50 opacity-0 pointer-events-none transition-opacity duration-300 bg-primary hover:bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <script src="js/scroll-top.js"></script>
+
+    <!-- AOS – Librairie d'animations au scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/animations.js"></script>
+
+    <script src="js/transitions.js"></script>
+    <script src="js/cookies.js"></script>
+
+  </body>
+</html>

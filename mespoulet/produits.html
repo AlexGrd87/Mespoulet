@@ -50,11 +50,37 @@
     <!-- Intro -->
     <section class="py-14 bg-white">
       <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
-        <p class="text-gray-600 text-lg leading-relaxed">
+        <p class="text-gray-600 text-lg leading-relaxed mb-6">
           Depuis plus de 25 ans, Mespoulet Distribution sélectionne et distribue les meilleures références
-          en vins, spiritueux, bières et softs. Que vous soyez professionnel ou particulier,
+          en vins, spiritueux, bières, softs, cafés et sirops. Que vous soyez professionnel ou particulier,
           retrouvez ici l'ensemble de nos gammes.
         </p>
+        <div class="flex flex-wrap justify-center gap-6 text-center">
+          <div>
+            <p class="text-3xl font-bold text-primary">2 528</p>
+            <p class="text-sm text-gray-500 mt-1">références</p>
+          </div>
+          <div class="w-px bg-gray-200"></div>
+          <div>
+            <p class="text-3xl font-bold text-primary">630</p>
+            <p class="text-sm text-gray-500 mt-1">vins</p>
+          </div>
+          <div class="w-px bg-gray-200"></div>
+          <div>
+            <p class="text-3xl font-bold text-primary">590</p>
+            <p class="text-sm text-gray-500 mt-1">spiritueux</p>
+          </div>
+          <div class="w-px bg-gray-200"></div>
+          <div>
+            <p class="text-3xl font-bold text-primary">247</p>
+            <p class="text-sm text-gray-500 mt-1">bières</p>
+          </div>
+          <div class="w-px bg-gray-200"></div>
+          <div>
+            <p class="text-3xl font-bold text-primary">470</p>
+            <p class="text-sm text-gray-500 mt-1">eaux & softs</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -73,6 +99,8 @@
           <button data-filter="sodas"       class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Sodas</button>
           <button data-filter="jus"         class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Jus de fruits</button>
           <button data-filter="energisants" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Énergisants</button>
+          <button data-filter="cafes"       class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Cafés & Thés</button>
+          <button data-filter="sirops"      class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Sirops</button>
         </div>
 
         <!-- Grille -->
@@ -90,8 +118,9 @@
                 <h3 class="font-bold text-primary text-xl">Vins</h3>
               </div>
               <p class="text-gray-600 leading-relaxed text-sm mb-4">
-                Rouges, blancs, rosés et vins effervescents — une sélection soignée de vignerons
-                français et internationaux pour tous les goûts et tous les budgets.
+                <strong class="text-primary">630 références</strong> dont 400 sélections premium —
+                rouges, blancs, rosés et effervescents de vignerons français et internationaux,
+                pour tous les goûts et tous les budgets.
               </p>
               <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Rouges</span>
@@ -137,8 +166,8 @@
                 <h3 class="font-bold text-primary text-xl">Spiritueux</h3>
               </div>
               <p class="text-gray-600 leading-relaxed text-sm mb-4">
-                Whiskies, cognacs, rhums, gins, vodkas et liqueurs — une gamme complète
-                des grandes références mondiales aux créations artisanales.
+                <strong class="text-primary">590 références</strong> — whiskies, cognacs, rhums,
+                gins, vodkas et liqueurs, des grandes références mondiales aux créations artisanales.
               </p>
               <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Whisky</span>
@@ -162,13 +191,14 @@
                 <h3 class="font-bold text-primary text-xl">Bières</h3>
               </div>
               <p class="text-gray-600 leading-relaxed text-sm mb-4">
-                Des grandes brasseries aux brasseries artisanales locales — blondes, brunes,
-                IPA, blanches et sans alcool pour satisfaire tous les palais.
+                <strong class="text-primary">247 références</strong> dont une centaine de spécialités —
+                grandes brasseries et artisanaux locaux, blondes, brunes, IPA, blanches, cidres et sans alcool.
               </p>
               <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Blondes</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Brunes</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">IPA</span>
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Cidres</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Sans alcool</span>
               </div>
             </div>
@@ -261,6 +291,53 @@
               <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Énergisants</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Thés glacés</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="cafes" data-aos="fade-up">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?fit=crop&w=800&h=420&q=80"
+                   alt="Cafés et thés" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Cafés & Thés</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-mug-hot text-secondary text-xl"></i>
+                <h3 class="font-bold text-primary text-xl">Cafés & Thés</h3>
+              </div>
+              <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                <strong class="text-primary">86 références</strong> — cafés en grains, moulus
+                et capsules, thés et tisanes, pour équiper professionnellement vos établissements.
+              </p>
+              <div class="product-tags flex flex-wrap gap-2">
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Cafés</span>
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Thés</span>
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Tisanes</span>
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Capsules</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="sirops" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?fit=crop&w=800&h=420&q=80"
+                   alt="Sirops" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Sirops</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-jar text-secondary text-xl"></i>
+                <h3 class="font-bold text-primary text-xl">Sirops</h3>
+              </div>
+              <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                <strong class="text-primary">85 références</strong> — sirops de grande marque et
+                artisanaux pour cocktails, mocktails, boissons chaudes et pâtisseries.
+              </p>
+              <div class="product-tags flex flex-wrap gap-2">
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Cocktails</span>
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Mocktails</span>
+                <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Aromatiques</span>
               </div>
             </div>
           </div>

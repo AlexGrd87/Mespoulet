@@ -5,470 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mespoulet Distribution – Grossiste en boissons à Limoges</title>
 
-    <!-- ── SEO – Référencement naturel ── -->
-
-    <!-- Description : texte affiché sous le titre dans les résultats Google (160 caractères max) -->
-    <meta
-      name="description"
-      content="Mespoulet Distribution, grossiste en boissons à Limoges depuis 1999. Vins, spiritueux, bières, eaux et softs pour professionnels et particuliers en Haute-Vienne. Membre du réseau C10."
-    />
-
-    <!-- Mots-clés : moins prioritaires aujourd'hui mais toujours utiles pour certains moteurs -->
-    <meta
-      name="keywords"
-      content="grossiste boissons Limoges, distributeur boissons Haute-Vienne, vins spiritueux Limoges, C10 Limoges, Mespoulet Distribution"
-    />
-
-    <!-- Robots : indique aux moteurs de recherche d'indexer la page et de suivre les liens -->
+    <meta name="description" content="Mespoulet Distribution, grossiste en boissons à Limoges depuis 1999. Vins, spiritueux, bières, eaux et softs pour professionnels et particuliers en Haute-Vienne. Membre du réseau C10." />
+    <meta name="keywords" content="grossiste boissons Limoges, distributeur boissons Haute-Vienne, vins spiritueux Limoges, C10 Limoges, Mespoulet Distribution" />
     <meta name="robots" content="index, follow" />
-
-    <!-- Auteur du site -->
     <meta name="author" content="Mespoulet Distribution" />
-
-    <!-- FAVICON : icône affichée dans l'onglet du navigateur -->
-    <!-- rel="icon" : favicon standard | type="image/png" : format de l'image -->
     <link rel="icon" type="image/png" href="Images/logo-mespoulet.png" />
-    <!-- rel="apple-touch-icon" : icône utilisée sur iPhone/iPad quand on ajoute le site à l'écran d'accueil -->
     <link rel="apple-touch-icon" href="Images/logo-mespoulet.png" />
 
-    <!-- AOS – Animate On Scroll : feuille de style nécessaire aux animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!-- ── Open Graph – Aperçu lors d'un partage sur les réseaux sociaux ── -->
-
-    <!-- og:type : type de contenu (website pour un site vitrine) -->
     <meta property="og:type" content="website" />
-
-    <!-- og:title : titre affiché dans la prévisualisation du lien partagé -->
-    <meta
-      property="og:title"
-      content="Mespoulet Distribution – Grossiste en boissons à Limoges"
-    />
-
-    <!-- og:description : description affichée dans la prévisualisation -->
-    <meta
-      property="og:description"
-      content="Vins, spiritueux, bières, eaux et softs pour professionnels et particuliers en Haute-Vienne. Membre du réseau C10 depuis 1999."
-    />
-
-    <!-- og:image : image affichée dans la prévisualisation (doit être une URL absolue en production) -->
+    <meta property="og:title" content="Mespoulet Distribution – Grossiste en boissons à Limoges" />
+    <meta property="og:description" content="Vins, spiritueux, bières, eaux et softs pour professionnels et particuliers en Haute-Vienne. Membre du réseau C10 depuis 1999." />
     <meta property="og:image" content="Images/logo-mespoulet.png" />
-
-    <!-- og:locale : langue du contenu -->
     <meta property="og:locale" content="fr_FR" />
 
-    <!-- Import Google Fonts : charge la police Sora avec plusieurs graisses (400=normal, 600=semi-gras, 700=gras) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome : bibliothèque d'icônes vectorielles chargée via CDN -->
-    <!-- Les icônes s'utilisent avec la balise <i> et les classes "fa-solid fa-nom-icone" -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-
-    <!-- Tailwind CSS via CDN : pas d'installation nécessaire, Tailwind se charge depuis internet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configuration Tailwind : on définit nos propres couleurs pour la charte graphique -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              // Couleur principale : bleu cobalt (couleur dominante de la façade et du panneau)
-              primary: "#1B3F8B",
-              // Couleur secondaire : jaune/or (barre du panneau Mespoulet + contour logo C10)
-              secondary: "#F0A500",
-              // Couleur de fond claire neutre légèrement bleutée
-              light: "#F4F6FA",
-            },
-            fontFamily: {
-              // Sora définie comme police par défaut (sans) et pour les titres (serif remplacé)
-              sans: ["Sora", "sans-serif"],
-              serif: ["Sora", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <script src="js/tailwind-config.js"></script>
+    <script src="js/layout.js"></script>
   </head>
 
-  <!-- bg-light : fond de page couleur crème définie plus haut | text-gray-800 : texte gris foncé par défaut -->
   <body class="bg-light text-gray-800">
-    <!-- ============================================================
-         HEADER – Barre de navigation fixe en haut de page
-    ============================================================ -->
+    <div id="site-header"></div>
 
-    <!-- sticky top-0 z-50 : header collé en haut, passe par-dessus tout le contenu au scroll -->
-    <header class="sticky top-0 z-50 bg-primary shadow-md">
-      <!-- BARRE PRINCIPALE : logo à gauche, nav desktop + bouton hamburger à droite -->
-      <div
-        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
-      >
-        <a href="index.html" class="flex items-center gap-3">
-          <img
-            src="Images/logo-mespoulet.png"
-            alt="Logo Mespoulet Distribution"
-            class="h-16 w-auto"
-          />
-          <span class="font-serif text-2xl font-bold text-white tracking-wide">
-            Mespoulet <span class="text-secondary">Distribution</span>
-          </span>
-        </a>
-
-        <!-- NAV DESKTOP -->
-        <!-- hidden md:flex : invisible sur mobile (< 768px), s'affiche en flex à partir de md -->
-        <nav class="hidden md:flex gap-8">
-          <a href="index.html" class="text-secondary font-medium">Accueil</a>
-          <a
-            href="about.html"
-            class="text-white hover:text-secondary transition-colors font-medium"
-            >L'entreprise</a
-          >
-          <a
-            href="produits.html"
-            class="text-white hover:text-secondary transition-colors font-medium"
-            >Nos produits</a
-          >
-          <a
-            href="contact.html"
-            class="text-white hover:text-secondary transition-colors font-medium"
-            >Contact</a
-          >
-        </nav>
-
-        <!-- BOUTON HAMBURGER -->
-        <!-- md:hidden : visible uniquement sur mobile (< 768px) -->
-        <!-- aria-label : accessibilité pour les lecteurs d'écran -->
-        <button
-          id="menu-toggle"
-          class="md:hidden text-white text-2xl focus:outline-none"
-          aria-label="Ouvrir le menu"
-        >
-          <!-- fa-bars = icône ☰ | sera remplacée par fa-xmark = ✕ quand le menu est ouvert -->
-          <i class="fa-solid fa-bars" id="menu-icon"></i>
-        </button>
-      </div>
-
-      <!-- MENU MOBILE -->
-      <!-- hidden : caché par défaut | md:hidden : sur desktop ce bloc n'existe pas -->
-      <!-- border-t border-white/20 : fine ligne de séparation entre la barre et le menu déroulant -->
-      <div id="mobile-menu" class="hidden md:hidden border-t border-white/20">
-        <!-- flex flex-col : liens empilés verticalement | px-6 py-4 gap-4 : espacement interne -->
-        <nav class="flex flex-col px-6 py-4 gap-4">
-          <a href="index.html" class="text-secondary font-medium py-1"
-            >Accueil</a
-          >
-          <a
-            href="about.html"
-            class="text-white hover:text-secondary transition-colors font-medium py-1"
-            >L'entreprise</a
-          >
-          <a
-            href="produits.html"
-            class="text-white hover:text-secondary transition-colors font-medium py-1"
-            >Nos produits</a
-          >
-          <a
-            href="contact.html"
-            class="text-white hover:text-secondary transition-colors font-medium py-1"
-            >Contact</a
-          >
-        </nav>
-      </div>
-
-      <!-- Chargement du script externe : src="js/menu.js" pointe vers le fichier dédié -->
-      <script src="js/menu.js"></script>
-    </header>
-
-    <!-- ============================================================
-         SECTION HERO – Grande bannière d'accueil
-    ============================================================ -->
-
-    <!-- relative : nécessaire pour positionner l'overlay par-dessus l'image -->
-    <!-- min-h-screen : hauteur minimale = 100% de la fenêtre | flex : pour centrer le contenu -->
-    <!-- items-center justify-center : centre le texte verticalement et horizontalement -->
     <section class="relative min-h-screen flex items-center justify-center">
-      <!-- IMAGE DE FOND (placeholder gris foncé pour l'instant) -->
-      <!-- absolute inset-0 : couvre toute la section | bg-gray-700 : couleur placeholder -->
-      <!-- bg-cover bg-center : l'image couvrira toute la zone, centrée -->
-      <!-- IMAGE DE FOND UNSPLASH (libre de droits) -->
-      <!-- bg-cover : l'image couvre tout le container sans laisser de blanc, même si les proportions diffèrent -->
-      <!-- bg-center : cadrage centré sur l'image | bg-no-repeat : pas de répétition -->
-      <!-- style background-image : seule façon d'injecter une URL dynamique avec Tailwind -->
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style="
-          background-image: url(&quot;https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?fit=crop&w=1920&h=1080&q=80&quot;);
-        "
-      ></div>
-
-      <!-- OVERLAY SOMBRE – améliore la lisibilité du texte sur l'image -->
-      <!-- absolute inset-0 : couvre toute la section | bg-black/60 : noir à 60% d'opacité -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+           style="background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?fit=crop&w=1920&h=1080&q=80')"></div>
       <div class="absolute inset-0 bg-black/60"></div>
-
-      <!-- CONTENU DU HERO – passe par-dessus l'overlay grâce à relative z-10 -->
-      <!-- relative z-10 : positionné au-dessus de l'overlay -->
-      <!-- text-center : texte centré | px-6 : padding horizontal sur mobile -->
       <div class="relative z-10 text-center px-6">
-        <!-- SURTITRE -->
-        <!-- text-secondary : couleur or | text-lg : taille légèrement grande | uppercase : majuscules -->
-        <!-- tracking-widest : espacement très large entre les lettres (effet élégant) | mb-4 : marge basse -->
-        <p class="text-secondary text-lg uppercase tracking-widest mb-4">
-          Grossiste en boissons depuis 1999 · Limoges
-        </p>
-
-        <!-- TITRE PRINCIPAL -->
-        <!-- font-serif : police avec empattements | text-5xl : très grande taille -->
-        <!-- font-bold : gras | text-white : blanc | leading-tight : interligne serré | mb-6 : marge basse -->
+        <p class="text-secondary text-lg uppercase tracking-widest mb-4">Grossiste en boissons depuis 1999 · Limoges</p>
         <h1 class="font-serif text-5xl font-bold text-white leading-tight mb-6">
           L'excellence des boissons,<br />
-          <!-- text-secondary : "au cœur de la Haute-Vienne" en couleur or pour mettre en valeur -->
           <span class="text-secondary">au cœur de la Haute-Vienne</span>
         </h1>
-
-        <!-- SOUS-TITRE / ACCROCHE -->
-        <!-- text-gray-300 : gris clair (lisible sur fond sombre) | text-xl : taille moyenne-grande -->
-        <!-- max-w-2xl : limite la largeur du paragraphe | mx-auto : centre le bloc | mb-10 : grande marge basse -->
         <p class="text-gray-300 text-xl max-w-2xl mx-auto mb-10">
-          Vins, spiritueux, eaux, sodas et bières — une gamme complète pour les
-          professionnels et les particuliers.
+          Vins, spiritueux, eaux, sodas et bières — une gamme complète pour les professionnels et les particuliers.
         </p>
-
-        <!-- BOUTONS D'APPEL À L'ACTION -->
-        <!-- flex : côte à côte | flex-wrap : passe à la ligne sur mobile | gap-4 : espace entre boutons -->
-        <!-- justify-center : centres les boutons -->
         <div class="flex flex-wrap gap-4 justify-center">
-          <!-- BOUTON PRINCIPAL -->
-          <!-- bg-secondary : fond or | hover:bg-yellow-600 : plus foncé au survol -->
-          <!-- text-white : texte blanc | font-semibold : semi-gras -->
-          <!-- px-8 py-3 : padding horizontal large, vertical moyen | rounded-full : bords très arrondis (pilule) -->
-          <!-- transition-colors : animation de couleur au survol -->
-          <a
-            href="produits.html"
-            class="bg-secondary hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full transition-colors"
-          >
+          <a href="produits.html" class="bg-secondary hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full transition-colors">
             Découvrir nos produits
           </a>
-
-          <!-- BOUTON SECONDAIRE (contour) -->
-          <!-- border-2 border-white : contour blanc de 2px | text-white : texte blanc -->
-          <!-- hover:bg-white hover:text-primary : au survol, fond blanc et texte bleu -->
-          <!-- px-8 py-3 rounded-full transition-colors : mêmes que le bouton principal -->
-          <a
-            href="contact.html"
-            class="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 rounded-full transition-colors"
-          >
+          <a href="contact.html" class="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 rounded-full transition-colors">
             Nous contacter
           </a>
         </div>
       </div>
-
-      <!-- FLÈCHE DE SCROLL (indique qu'il y a du contenu plus bas) -->
-      <!-- absolute bottom-8 : collé en bas | left-1/2 -translate-x-1/2 : centré horizontalement -->
-      <!-- animate-bounce : animation rebond continue -->
       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <!-- text-white/70 : blanc à 70% d'opacité | text-3xl : grande taille -->
         <span class="text-white/70 text-3xl">↓</span>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION POINTS FORTS – 3 cartes sous le hero
-    ============================================================ -->
-
-    <!-- py-20 : padding vertical large | bg-white : fond blanc (contraste avec le hero) -->
     <section class="py-20 bg-white">
-      <!-- max-w-6xl mx-auto px-6 : même conteneur centré que le header -->
       <div class="max-w-6xl mx-auto px-6">
-        <!-- TITRE DE SECTION -->
-        <!-- text-center : centré | mb-14 : grande marge basse -->
-        <!-- data-aos="fade-up" : le titre monte en fondu au scroll -->
         <div class="text-center mb-14" data-aos="fade-up">
-          <!-- text-secondary : couleur or | uppercase tracking-widest text-sm : style surtitre discret -->
-          <p class="text-secondary uppercase tracking-widest text-sm mb-2">
-            Pourquoi nous choisir
-          </p>
-
-          <!-- font-serif text-4xl font-bold text-primary : titre élégant en bordeaux -->
-          <h2 class="font-serif text-4xl font-bold text-primary">
-            Nos points forts
-          </h2>
+          <p class="text-secondary uppercase tracking-widest text-sm mb-2">Pourquoi nous choisir</p>
+          <h2 class="font-serif text-4xl font-bold text-primary">Nos points forts</h2>
         </div>
-
-        <!-- GRILLE DE 3 CARTES -->
-        <!-- grid : grille CSS | grid-cols-1 : 1 colonne sur mobile -->
-        <!-- md:grid-cols-3 : 3 colonnes à partir de la taille "md" (768px) | gap-8 : espace entre les cartes -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- CARTE 1 – Expertise -->
-          <!-- flex flex-col : empile les éléments verticalement dans la carte -->
-          <!-- items-center : centre horizontalement tous les enfants -->
-          <!-- data-aos="fade-up" : monte en fondu | pas de delay = apparaît en premier -->
-          <div
-            class="bg-light rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center"
-            data-aos="fade-up"
-          >
-            <!-- Zone icône à hauteur fixe : h-20 = 80px, flex centré → même hauteur pour les 3 cartes -->
+          <div class="bg-light rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center" data-aos="fade-up">
             <div class="h-20 flex items-center justify-center mb-4">
-              <!-- fa-solid fa-wine-glass-empty : icône verre de vin Font Awesome -->
-              <!-- text-5xl : taille de l'icône | text-primary : couleur bleu du site -->
               <i class="fa-solid fa-wine-glass-empty text-5xl text-primary"></i>
             </div>
-            <h3 class="font-serif text-xl font-bold text-primary mb-3">
-              Expertise métier
-            </h3>
+            <h3 class="font-serif text-xl font-bold text-primary mb-3">Expertise métier</h3>
             <p class="text-gray-600 leading-relaxed">
-              Plus de 25 ans d'expérience dans la sélection et la distribution
-              de boissons en Haute-Vienne.
+              Plus de 25 ans d'expérience dans la sélection et la distribution de boissons en Haute-Vienne.
             </p>
           </div>
-
-          <!-- CARTE 2 – Réseau C10 -->
-          <!-- data-aos-delay="100" : apparaît 100ms après la carte 1, effet cascade -->
-          <div
-            class="bg-light rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center"
-            data-aos="fade-up" data-aos-delay="100"
-          >
-            <!-- Même bloc h-20 pour aligner le logo C10 avec les emojis des autres cartes -->
+          <div class="bg-light rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
             <div class="h-20 flex items-center justify-center mb-4">
-              <!-- h-16 : logo limité à 64px de haut | w-auto : largeur calculée automatiquement selon les proportions -->
-              <!-- object-contain : ne déforme pas le logo -->
-              <img
-                src="Images/logo-c10-neutre.png"
-                alt="Logo réseau C10"
-                class="h-16 w-auto object-contain"
-                loading="lazy"
-              />
+              <img src="Images/logo-c10-neutre.png" alt="Logo réseau C10" class="h-16 w-auto object-contain" loading="lazy" />
             </div>
-            <h3 class="font-serif text-xl font-bold text-primary mb-3">
-              Réseau C10
-            </h3>
+            <h3 class="font-serif text-xl font-bold text-primary mb-3">Réseau C10</h3>
             <p class="text-gray-600 leading-relaxed">
-              Membre du groupement national C10, garantissant l'accès aux
-              meilleures marques et aux meilleurs tarifs.
+              Membre du groupement national C10, garantissant l'accès aux meilleures marques et aux meilleurs tarifs.
             </p>
           </div>
-
-          <!-- CARTE 3 – Gamme complète -->
-          <!-- data-aos-delay="200" : apparaît 200ms après la carte 1 -->
-          <div
-            class="bg-light rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center"
-            data-aos="fade-up" data-aos-delay="200"
-          >
-            <!-- Même bloc h-20 pour cohérence -->
+          <div class="bg-light rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
             <div class="h-20 flex items-center justify-center mb-4">
-              <!-- fa-boxes-stacked : icône caisses empilées, évoque le stock/la gamme complète -->
               <i class="fa-solid fa-boxes-stacked text-5xl text-primary"></i>
             </div>
-            <h3 class="font-serif text-xl font-bold text-primary mb-3">
-              Gamme complète
-            </h3>
+            <h3 class="font-serif text-xl font-bold text-primary mb-3">Gamme complète</h3>
             <p class="text-gray-600 leading-relaxed">
-              Des vins fins aux eaux minérales, en passant par les spiritueux et
-              les softs — tout en un seul fournisseur.
+              Des vins fins aux eaux minérales, en passant par les spiritueux et les softs — tout en un seul fournisseur.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION PRO / PARTICULIER – Deux publics, deux colonnes
-    ============================================================ -->
-
-    <!-- py-20 bg-light : fond crème, bien aéré -->
     <section class="py-20 bg-light">
       <div class="max-w-6xl mx-auto px-6">
-        <!-- TITRE -->
-        <!-- data-aos="fade-up" : le titre monte en fondu -->
         <div class="text-center mb-14" data-aos="fade-up">
-          <p class="text-secondary uppercase tracking-widest text-sm mb-2">
-            Nous servons tout le monde
-          </p>
-          <h2 class="font-serif text-4xl font-bold text-primary">
-            Professionnels & Particuliers
-          </h2>
+          <p class="text-secondary uppercase tracking-widest text-sm mb-2">Nous servons tout le monde</p>
+          <h2 class="font-serif text-4xl font-bold text-primary">Professionnels & Particuliers</h2>
         </div>
-
-        <!-- DEUX COLONNES côte à côte -->
-        <!-- grid grid-cols-1 md:grid-cols-2 gap-10 : 1 col mobile, 2 col desktop, avec espace -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <!-- COLONNE PROFESSIONNELS -->
-          <!-- overflow-hidden rounded-2xl shadow-md : coins arrondis + ombre pour effet carte -->
-          <!-- data-aos="fade-right" : glisse depuis la gauche -->
           <div class="overflow-hidden rounded-2xl shadow-md" data-aos="fade-right">
-            <!-- IMAGE PROFESSIONNELS : sommelier en service dans un restaurant élégant -->
-            <!-- h-56 : hauteur fixe 224px | w-full : prend toute la largeur de la carte -->
-            <!-- object-cover : couvre toute la zone sans déformation | object-center : cadrage centré -->
-            <img
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?fit=crop&w=800&h=450&q=80"
-              alt="Service professionnel en restaurant"
-              class="h-56 w-full object-cover object-center"
-              loading="lazy"
-            />
-
-            <!-- TEXTE DE LA COLONNE -->
-            <!-- bg-white p-8 : fond blanc, bien padé -->
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?fit=crop&w=800&h=450&q=80"
+                 alt="Service professionnel en restaurant" class="h-56 w-full object-cover object-center" loading="lazy" />
             <div class="bg-white p-8">
-              <!-- text-secondary text-sm uppercase tracking-widest mb-2 : surtitre discret en or -->
-              <p class="text-secondary text-sm uppercase tracking-widest mb-2">
-                Pour les pros
-              </p>
-              <h3 class="font-serif text-2xl font-bold text-primary mb-4">
-                Restaurateurs, cavistes, hôteliers
-              </h3>
+              <p class="text-secondary text-sm uppercase tracking-widest mb-2">Pour les pros</p>
+              <h3 class="font-serif text-2xl font-bold text-primary mb-4">Restaurateurs, cavistes, hôteliers</h3>
               <p class="text-gray-600 leading-relaxed mb-6">
-                Commandes en volume, livraison régulière, conseils personnalisés
-                et accès à notre catalogue complet. Nous sommes votre partenaire
-                boissons de confiance en Nouvelle-Aquitaine.
+                Commandes en volume, livraison régulière, conseils personnalisés et accès à notre catalogue complet.
+                Nous sommes votre partenaire boissons de confiance en Nouvelle-Aquitaine.
               </p>
-              <!-- LIEN CALL TO ACTION -->
-              <!-- inline-block : se comporte comme un bouton | bg-primary text-white : fond bordeaux, texte blanc -->
-              <!-- px-6 py-2 rounded-full : style pilule | hover:bg-red-900 : plus foncé au survol -->
-              <a
-                href="contact.html"
-                class="inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-900 transition-colors font-medium"
-              >
+              <a href="contact.html" class="inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-900 transition-colors font-medium">
                 Prendre contact
               </a>
             </div>
           </div>
-
-          <!-- COLONNE PARTICULIERS -->
-          <!-- data-aos="fade-left" : glisse depuis la droite, symétrique avec la colonne pro -->
           <div class="overflow-hidden rounded-2xl shadow-md" data-aos="fade-left">
-            <!-- IMAGE PARTICULIERS : photo locale de cave/comptoir -->
-            <!-- h-56 : hauteur fixe 224px | w-full : prend toute la largeur de la carte -->
-            <!-- object-cover : couvre toute la zone sans déformation | object-center : cadrage centré -->
-            <img
-              src="Images/comptoir-des-vignes.webp"
-              alt="Comptoir des vignes à Limoges"
-              class="h-56 w-full object-cover object-center"
-              loading="lazy"
-            />
-
+            <img src="Images/comptoir-des-vignes.webp" alt="Comptoir des vignes à Limoges"
+                 class="h-56 w-full object-cover object-center" loading="lazy" />
             <div class="bg-white p-8">
-              <p class="text-secondary text-sm uppercase tracking-widest mb-2">
-                Pour les particuliers
-              </p>
-              <h3 class="font-serif text-2xl font-bold text-primary mb-4">
-                Passionnés & amateurs de belles bouteilles
-              </h3>
+              <p class="text-secondary text-sm uppercase tracking-widest mb-2">Pour les particuliers</p>
+              <h3 class="font-serif text-2xl font-bold text-primary mb-4">Passionnés & amateurs de belles bouteilles</h3>
               <p class="text-gray-600 leading-relaxed mb-6">
-                Retrouvez une sélection soignée de vins, spiritueux et boissons
-                pour vos repas, événements ou cadeaux. La qualité grossiste,
-                accessible à tous.
+                Retrouvez une sélection soignée de vins, spiritueux et boissons pour vos repas, événements ou cadeaux.
+                La qualité grossiste, accessible à tous.
               </p>
-              <a
-                href="produits.html"
-                class="inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-900 transition-colors font-medium"
-              >
+              <a href="produits.html" class="inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-900 transition-colors font-medium">
                 Voir nos produits
               </a>
             </div>
@@ -477,224 +133,60 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION CHIFFRES CLÉS
-    ============================================================ -->
-
-    <!-- bg-primary : fond bordeaux pour contraster avec les sections précédentes | py-16 : padding vertical -->
     <section class="bg-primary py-16">
-      <!-- max-w-4xl : conteneur un peu plus étroit pour cette section | mx-auto px-6 : centré et padé -->
       <div class="max-w-4xl mx-auto px-6">
-        <!-- GRILLE DE 3 CHIFFRES -->
-        <!-- grid grid-cols-1 sm:grid-cols-3 : 1 col mobile, 3 col à partir de 640px -->
-        <!-- gap-8 text-center : espace et centrage -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          <!-- CHIFFRE 1 -->
-          <!-- data-aos="zoom-in" : apparaît en zoom depuis le centre -->
           <div data-aos="zoom-in">
-            <!-- text-5xl font-bold text-secondary : le chiffre en grand, couleur or -->
-            <p class="text-5xl font-bold text-secondary">+25</p>
-            <!-- text-white/80 mt-2 : description en blanc légèrement transparent -->
+            <p class="text-5xl font-bold text-secondary"
+               data-counter="25" data-prefix="+">+25</p>
             <p class="text-white/80 mt-2">ans d'expérience</p>
           </div>
-
-          <!-- CHIFFRE 2 -->
-          <!-- data-aos-delay="100" : léger décalage pour effet cascade -->
           <div data-aos="zoom-in" data-aos-delay="100">
-            <p class="text-5xl font-bold text-secondary">+20</p>
+            <p class="text-5xl font-bold text-secondary"
+               data-counter="20" data-prefix="+">+20</p>
             <p class="text-white/80 mt-2">collaborateurs</p>
           </div>
-
-          <!-- CHIFFRE 3 -->
-          <!-- data-aos-delay="200" : dernier à apparaître -->
           <div data-aos="zoom-in" data-aos-delay="200">
-            <p class="text-5xl font-bold text-secondary">10M€</p>
+            <p class="text-5xl font-bold text-secondary"
+               data-counter="10" data-suffix="M€">10M€</p>
             <p class="text-white/80 mt-2">de chiffre d'affaires</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         FOOTER – Pied de page
-    ============================================================ -->
+    <div id="site-footer"></div>
 
-    <!-- bg-gray-900 : fond très sombre | text-gray-400 : texte gris clair sur fond sombre | py-12 : padding -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-      <div class="max-w-6xl mx-auto px-6">
-        <!-- GRILLE 3 COLONNES -->
-        <!-- grid grid-cols-1 md:grid-cols-3 gap-10 : 1 col mobile, 3 col desktop -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <!-- COLONNE 1 – Identité -->
-          <div>
-            <!-- text-white font-serif text-xl font-bold mb-4 : nom de la société en blanc -->
-            <h4 class="text-white font-serif text-xl font-bold mb-4">
-              Mespoulet <span class="text-secondary">Distribution</span>
-            </h4>
-            <p class="leading-relaxed">
-              Grossiste en boissons à Limoges depuis 1999.<br />
-              Membre du réseau national C10.
-            </p>
-          </div>
-
-          <!-- COLONNE 2 – Navigation -->
-          <div>
-            <h4
-              class="text-white font-semibold mb-4 uppercase tracking-wide text-sm"
-            >
-              Navigation
-            </h4>
-            <!-- flex flex-col gap-2 : liens empilés verticalement avec espace -->
-            <ul class="flex flex-col gap-2">
-              <!-- hover:text-white transition-colors : blanc au survol -->
-              <li>
-                <a href="index.html" class="hover:text-white transition-colors"
-                  >Accueil</a
-                >
-              </li>
-              <li>
-                <a href="about.html" class="hover:text-white transition-colors"
-                  >L'entreprise</a
-                >
-              </li>
-              <li>
-                <a
-                  href="produits.html"
-                  class="hover:text-white transition-colors"
-                  >Nos produits</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  class="hover:text-white transition-colors"
-                  >Contact</a
-                >
-              </li>
-              <li>
-                <a
-                  href="mentions-legales.html"
-                  class="hover:text-white transition-colors"
-                  >Mentions légales</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- COLONNE 3 – Contact -->
-          <div>
-            <h4
-              class="text-white font-semibold mb-4 uppercase tracking-wide text-sm"
-            >
-              Coordonnées
-            </h4>
-            <!-- flex flex-col gap-2 : infos empilées -->
-            <address class="not-italic flex flex-col gap-2">
-              <!-- not-italic : Tailwind retire l'italique par défaut des balises <address> -->
-              <span>38 Rue Maurice Utrillo</span>
-              <span>87000 Limoges</span>
-              <a
-                href="tel:+33XXXXXXXXX"
-                class="hover:text-white transition-colors"
-                >05 55 34 51 30</a
-              >
-            </address>
-          </div>
-        </div>
-
-        <!-- SÉPARATEUR -->
-        <!-- border-t border-gray-700 mt-10 pt-6 : ligne de séparation en haut, avec espace -->
-        <!-- text-center text-sm : texte centré et petit pour les mentions légales -->
-        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
-          <p>© 2026 Mespoulet Distribution – Tous droits réservés</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- ============================================================
-         SCHEMA.ORG – Données structurées pour Google
-         Ce bloc est invisible pour les visiteurs mais lu par les moteurs
-         de recherche. Il permet d'afficher des infos riches dans Google
-         (adresse, téléphone, horaires) pour les recherches locales.
-    ============================================================ -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Mespoulet Distribution",
-        "description": "Grossiste en boissons à Limoges depuis 1999. Vins, spiritueux, bières, eaux et softs pour professionnels et particuliers. Membre du réseau C10.",
-        "url": "https://www.mespoulet-distribution.fr",
-        "telephone": "+33555345130",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "38 Rue Maurice Utrillo",
-          "addressLocality": "Limoges",
-          "postalCode": "87000",
-          "addressCountry": "FR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 45.8459,
-          "longitude": 1.2882
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "08:00",
-            "closes": "12:00"
-          }
-        ],
-        "sameAs": ["https://www.c10.fr/distribution/mespoulet-distribution/"],
-        "foundingDate": "1999",
-        "numberOfEmployees": {
-          "@type": "QuantitativeValue",
-          "minValue": 20,
-          "maxValue": 49
-        }
-      }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Mespoulet Distribution",
+      "description": "Grossiste en boissons à Limoges depuis 1999. Vins, spiritueux, bières, eaux et softs pour professionnels et particuliers. Membre du réseau C10.",
+      "url": "https://www.mespoulet-distribution.fr",
+      "telephone": "+33555345130",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "38 Rue Maurice Utrillo",
+        "addressLocality": "Limoges",
+        "postalCode": "87000",
+        "addressCountry": "FR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 45.8459, "longitude": 1.2882 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" }
+      ],
+      "sameAs": ["https://www.c10.fr/distribution/mespoulet-distribution/"],
+      "foundingDate": "1999",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 20, "maxValue": 49 }
+    }
     </script>
 
-    <!-- BOUTON RETOUR EN HAUT -->
-    <!-- fixed : positionné par rapport à la fenêtre (pas au document) -->
-    <!-- bottom-6 right-6 : collé en bas à droite avec 24px de marge -->
-    <!-- z-50 : passe par-dessus tout le contenu -->
-    <!-- opacity-0 pointer-events-none : invisible et non cliquable par défaut -->
-    <!-- transition-opacity duration-300 : apparition/disparition progressive -->
-    <!-- bg-primary hover:bg-blue-900 : fond bleu, plus foncé au survol -->
-    <!-- w-12 h-12 rounded-full : bouton rond de 48px -->
-    <!-- flex items-center justify-center : icône centrée -->
-    <!-- shadow-lg : ombre portée pour le détacher du fond -->
-    <button id="scroll-top-btn"
-            aria-label="Retour en haut de page"
-            class="fixed bottom-6 right-6 z-50 opacity-0 pointer-events-none transition-opacity duration-300 bg-primary hover:bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
-
-    <script src="js/scroll-top.js"></script>
-
-    <!-- AOS – Librairie d'animations au scroll -->
-    <!-- Chargé en dernier pour ne pas bloquer le rendu de la page -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- animations.js appelle AOS.init() avec nos paramètres personnalisés -->
     <script src="js/animations.js"></script>
-
-    <!-- Transitions de page : fondu entrant/sortant entre les pages -->
+    <script src="js/counter.js"></script>
     <script src="js/transitions.js"></script>
-    <!-- Bandeau RGPD : affiché si l'utilisateur n'a pas encore fait de choix -->
     <script src="js/cookies.js"></script>
-
   </body>
 </html>

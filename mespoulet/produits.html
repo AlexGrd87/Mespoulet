@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nos Produits – Mespoulet Distribution</title>
 
-    <!-- ── SEO ── -->
     <meta name="description" content="Découvrez la gamme complète Mespoulet Distribution : vins, champagnes, spiritueux, bières, eaux, sodas, jus de fruits et énergisants. Livraison en Haute-Vienne." />
     <meta name="keywords" content="vins Limoges, spiritueux grossiste, bières distribution, eaux sodas Haute-Vienne, catalogue boissons Mespoulet" />
     <meta name="robots" content="index, follow" />
@@ -13,126 +12,43 @@
     <link rel="icon" type="image/png" href="Images/logo-mespoulet.png" />
     <link rel="apple-touch-icon" href="Images/logo-mespoulet.png" />
 
-    <!-- ── Open Graph ── -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nos Produits – Mespoulet Distribution" />
     <meta property="og:description" content="Vins, champagnes, spiritueux, bières, eaux, sodas et jus de fruits — une gamme complète pour professionnels et particuliers en Haute-Vienne." />
     <meta property="og:image" content="Images/logo-mespoulet.png" />
     <meta property="og:locale" content="fr_FR" />
 
-    <!-- Police Sora depuis Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
-
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <script src="js/layout.js"></script>
 
-    <!-- AOS – feuille de style des animations (chargée ici pour éviter le flash au scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!-- Configuration Tailwind : mêmes couleurs et polices que index.html -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary:   "#1B3F8B",
-              secondary: "#F0A500",
-              light:     "#F4F6FA",
-            },
-            fontFamily: {
-              sans:  ["Sora", "sans-serif"],
-              serif: ["Sora", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <style>
+      @keyframes ticker    { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+      @keyframes ticker-r  { from { transform: translateX(-50%); } to { transform: translateX(0); }   }
+      .ticker-l { animation: ticker   30s linear infinite; }
+      .ticker-r { animation: ticker-r 30s linear infinite; }
+      .ticker-l:hover, .ticker-r:hover { animation-play-state: paused; }
+    </style>
   </head>
 
   <body class="bg-light text-gray-800">
+    <div id="site-header"></div>
 
-    <!-- ============================================================
-         HEADER – identique à index.html
-    ============================================================ -->
-    <header class="sticky top-0 z-50 bg-primary shadow-md">
-
-      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="Images/logo-mespoulet.png" alt="Logo Mespoulet Distribution" class="h-16 w-auto" />
-          <span class="font-serif text-2xl font-bold text-white tracking-wide">
-            Mespoulet <span class="text-secondary">Distribution</span>
-          </span>
-        </a>
-
-        <nav class="hidden md:flex gap-8">
-          <a href="index.html"    class="text-white hover:text-secondary transition-colors font-medium">Accueil</a>
-          <a href="about.html"    class="text-white hover:text-secondary transition-colors font-medium">L'entreprise</a>
-          <a href="produits.html" class="text-secondary font-medium">Nos produits</a>
-          <a href="contact.html"  class="text-white hover:text-secondary transition-colors font-medium">Contact</a>
-        </nav>
-
-        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Ouvrir le menu">
-          <i class="fa-solid fa-bars" id="menu-icon"></i>
-        </button>
-
-      </div>
-
-      <div id="mobile-menu" class="hidden md:hidden border-t border-white/20">
-        <nav class="flex flex-col px-6 py-4 gap-4">
-          <a href="index.html"    class="text-white hover:text-secondary transition-colors font-medium py-1">Accueil</a>
-          <a href="about.html"    class="text-white hover:text-secondary transition-colors font-medium py-1">L'entreprise</a>
-          <a href="produits.html" class="text-secondary font-medium py-1">Nos produits</a>
-          <a href="contact.html"  class="text-white hover:text-secondary transition-colors font-medium py-1">Contact</a>
-        </nav>
-      </div>
-
-      <script src="js/menu.js"></script>
-
-    </header>
-
-
-    <!-- ============================================================
-         BANNIÈRE DE PAGE – hero réduit (pas plein écran)
-    ============================================================ -->
-
-    <!-- relative : pour positionner l'overlay | h-72 : hauteur fixe 288px (moins grand que le hero index) -->
+    <!-- Bannière -->
     <section class="relative h-72 flex items-center justify-center">
-
-      <!-- IMAGE DE FOND : cave à vin -->
-      <!-- bg-cover bg-center : couvre tout le container, centrée -->
       <div class="absolute inset-0 bg-cover bg-center"
-           style="background-image: url('https://images.unsplash.com/photo-1474722883778-792e7990302f?fit=crop&w=1920&h=600&q=80')">
-      </div>
-
-      <!-- OVERLAY sombre pour lisibilité -->
+           style="background-image: url('https://images.unsplash.com/photo-1474722883778-792e7990302f?fit=crop&w=1920&h=600&q=80')"></div>
       <div class="absolute inset-0 bg-primary/75"></div>
-
-      <!-- TITRE DE PAGE -->
       <div class="relative z-10 text-center px-6">
-        <!-- text-secondary uppercase tracking-widest : surtitre en jaune -->
         <p class="text-secondary uppercase tracking-widest text-sm mb-3">Notre catalogue</p>
-        <!-- font-serif text-5xl font-bold text-white : grand titre blanc -->
         <h1 class="font-serif text-5xl font-bold text-white">Nos Produits</h1>
-        <!-- mt-4 text-gray-300 : sous-titre discret -->
         <p class="mt-4 text-gray-300 text-lg">Une gamme complète pour tous vos besoins</p>
       </div>
-
     </section>
 
-
-    <!-- ============================================================
-         INTRODUCTION
-    ============================================================ -->
-
-    <!-- py-14 bg-white : section blanche aérée avant la grille -->
+    <!-- Intro -->
     <section class="py-14 bg-white">
-      <!-- data-aos="fade-up" : le paragraphe intro monte en fondu -->
       <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
         <p class="text-gray-600 text-lg leading-relaxed">
           Depuis plus de 25 ans, Mespoulet Distribution sélectionne et distribue les meilleures références
@@ -142,49 +58,34 @@
       </div>
     </section>
 
-
-    <!-- ============================================================
-         GRILLE DES CATÉGORIES
-    ============================================================ -->
-
-    <!-- py-16 : padding vertical | max-w-6xl mx-auto px-6 : même conteneur centré que partout -->
+    <!-- Grille avec filtre -->
     <section class="py-16 bg-light">
       <div class="max-w-6xl mx-auto px-6">
 
-        <!-- GRILLE : 1 col mobile → 2 col tablette → 4 col desktop (8 cartes = 2 rangées de 4) -->
-        <!-- gap-8 : espace uniforme entre les cartes -->
+        <!-- Boutons de filtre -->
+        <div class="flex flex-wrap gap-3 justify-center mb-12" data-aos="fade-up">
+          <button data-filter="tous"        class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-primary text-white shadow-sm">Tous</button>
+          <button data-filter="vins"        class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Vins</button>
+          <button data-filter="champagnes"  class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Champagnes</button>
+          <button data-filter="spiritueux"  class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Spiritueux</button>
+          <button data-filter="bieres"      class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Bières</button>
+          <button data-filter="eaux"        class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Eaux</button>
+          <button data-filter="sodas"       class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Sodas</button>
+          <button data-filter="jus"         class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Jus de fruits</button>
+          <button data-filter="energisants" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 shadow-sm hover:bg-primary hover:text-white">Énergisants</button>
+        </div>
+
+        <!-- Grille -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-
-          <!-- ── CARTE 1 : Vins ── -->
-          <!-- group : permet d'activer des effets sur les enfants au survol de la carte -->
-          <!-- overflow-hidden : cache le dépassement de l'image au zoom | rounded-2xl shadow-md : style carte -->
-          <!-- bg-white : fond blanc | transition-shadow hover:shadow-xl : ombre plus forte au survol -->
-          <!-- data-aos="fade-up" : monte en fondu au scroll -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up">
-
-            <!-- ZONE IMAGE -->
-            <!-- relative h-52 overflow-hidden : hauteur fixe, débordement caché pour l'effet zoom -->
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="vins" data-aos="fade-up">
             <div class="relative h-52 overflow-hidden">
-              <!-- group-hover:scale-105 : zoom léger de l'image au survol de la carte -->
-              <!-- transition-transform duration-500 : animation de zoom progressive (500ms) -->
               <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?fit=crop&w=800&h=420&q=80"
-                   alt="Vins"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <!-- BADGE CATÉGORIE positionné en haut à gauche de l'image -->
-              <!-- absolute top-4 left-4 : coin haut gauche | bg-primary text-white : fond bleu, texte blanc -->
-              <!-- px-3 py-1 rounded-full text-sm font-semibold : style pilule compact -->
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Vins
-              </span>
+                   alt="Vins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Vins</span>
             </div>
-
-            <!-- CONTENU TEXTE DE LA CARTE -->
             <div class="p-6">
-              <!-- flex items-center gap-3 mb-3 : icône et titre côte à côte -->
               <div class="flex items-center gap-3 mb-3">
-                <!-- text-secondary text-xl : icône en jaune, taille moyenne -->
                 <i class="fa-solid fa-wine-glass-empty text-secondary text-xl"></i>
                 <h3 class="font-bold text-primary text-xl">Vins</h3>
               </div>
@@ -192,10 +93,7 @@
                 Rouges, blancs, rosés et vins effervescents — une sélection soignée de vignerons
                 français et internationaux pour tous les goûts et tous les budgets.
               </p>
-              <!-- SOUS-CATÉGORIES : tags visuels -->
-              <!-- flex flex-wrap gap-2 : tags qui passent à la ligne si besoin -->
-              <div class="flex flex-wrap gap-2">
-                <!-- bg-light text-primary text-xs px-2 py-1 rounded-full : style tag discret -->
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Rouges</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Blancs</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Rosés</span>
@@ -204,17 +102,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 2 : Champagnes & Crémants ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="champagnes" data-aos="fade-up" data-aos-delay="100">
             <div class="relative h-52 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&w=800&h=420&q=80"
-                   alt="Champagnes et Crémants"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Champagnes
-              </span>
+                   alt="Champagnes et Crémants" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Champagnes</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -225,7 +117,7 @@
                 Grandes maisons et récoltants indépendants, crémants d'Alsace, de Bourgogne et de Loire —
                 pour célébrer chaque occasion avec élégance.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Champagnes</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Crémants</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Prosecco</span>
@@ -233,17 +125,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 3 : Spiritueux ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="spiritueux" data-aos="fade-up" data-aos-delay="200">
             <div class="relative h-52 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1569529465841-dfecdab7503b?fit=crop&w=800&h=420&q=80"
-                   alt="Spiritueux"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Spiritueux
-              </span>
+                   alt="Spiritueux" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Spiritueux</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -254,7 +140,7 @@
                 Whiskies, cognacs, rhums, gins, vodkas et liqueurs — une gamme complète
                 des grandes références mondiales aux créations artisanales.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Whisky</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Cognac</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Rhum</span>
@@ -264,17 +150,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 4 : Bières ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="bieres" data-aos="fade-up" data-aos-delay="300">
             <div class="relative h-52 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?fit=crop&w=800&h=420&q=80"
-                   alt="Bières"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Bières
-              </span>
+                   alt="Bières" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Bières</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -285,7 +165,7 @@
                 Des grandes brasseries aux brasseries artisanales locales — blondes, brunes,
                 IPA, blanches et sans alcool pour satisfaire tous les palais.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Blondes</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Brunes</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">IPA</span>
@@ -294,17 +174,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 5 : Eaux ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="eaux" data-aos="fade-up">
             <div class="relative h-52 overflow-hidden">
               <img src="Images/eau-plate-petillante.webp"
-                   alt="Eaux plates et pétillantes"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Eaux
-              </span>
+                   alt="Eaux plates et pétillantes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Eaux</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -315,7 +189,7 @@
                 Eaux plates et pétillantes — des grandes marques aux eaux minérales
                 naturelles pour tous vos besoins en hydratation.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Plates</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Pétillantes</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Minérales</span>
@@ -323,17 +197,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 6 : Sodas ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="sodas" data-aos="fade-up" data-aos-delay="100">
             <div class="relative h-52 overflow-hidden">
               <img src="Images/sodas.avif"
-                   alt="Sodas"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Sodas
-              </span>
+                   alt="Sodas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Sodas</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -344,7 +212,7 @@
                 Sodas, tonics et limonades — les grandes références pour accompagner
                 vos repas et rafraîchir vos clients.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Sodas</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Tonic</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Limonades</span>
@@ -352,17 +220,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 7 : Jus de fruits ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="jus" data-aos="fade-up" data-aos-delay="200">
             <div class="relative h-52 overflow-hidden">
               <img src="https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg?auto=compress&cs=tinysrgb&w=800&h=420&fit=crop"
-                   alt="Jus de fruits"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Jus de fruits
-              </span>
+                   alt="Jus de fruits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Jus de fruits</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -373,7 +235,7 @@
                 Jus frais, nectars et purs jus — une sélection fruitée et naturelle
                 pour le petit-déjeuner ou tout au long de la journée.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Purs jus</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Nectars</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Smoothies</span>
@@ -381,17 +243,11 @@
             </div>
           </div>
 
-
-          <!-- ── CARTE 8 : Softs & Énergisants ── -->
-          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
+          <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="energisants" data-aos="fade-up" data-aos-delay="300">
             <div class="relative h-52 overflow-hidden">
               <img src="Images/boissons-energisantes.jpg"
-                   alt="Boissons énergisantes"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" />
-              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Énergisants
-              </span>
+                   alt="Boissons énergisantes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Énergisants</span>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -402,28 +258,132 @@
                 Boissons énergisantes et thés glacés —
                 pour répondre aux nouvelles tendances de consommation.
               </p>
-              <div class="flex flex-wrap gap-2">
+              <div class="product-tags flex flex-wrap gap-2">
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Énergisants</span>
                 <span class="bg-light text-primary text-xs px-2 py-1 rounded-full">Thés glacés</span>
               </div>
             </div>
           </div>
 
-
         </div>
       </div>
     </section>
 
+    <!-- Marques -->
+    <section class="py-16 bg-white overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 text-center mb-10" data-aos="fade-up">
+        <p class="text-secondary uppercase tracking-widest text-sm mb-2">Ils font partie de notre catalogue</p>
+        <h2 class="font-serif text-4xl font-bold text-primary">Nos marques</h2>
+      </div>
 
-    <!-- ============================================================
-         BANDEAU CALL TO ACTION
-    ============================================================ -->
+      <!-- Ligne 1 – défile vers la gauche -->
+      <div class="overflow-hidden mb-4">
+        <div class="ticker-l flex gap-6 w-max">
+          <!-- liste × 2 pour boucle transparente -->
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Rémy Martin</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Hennessy</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Martell</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Ballantine's</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Ricard</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Havana Club</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Bombay Sapphire</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Johnnie Walker</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Aperol</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Cointreau</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <!-- copie pour boucle -->
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Rémy Martin</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Hennessy</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Martell</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Ballantine's</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Ricard</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Havana Club</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Bombay Sapphire</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Johnnie Walker</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Aperol</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Cointreau</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+        </div>
+      </div>
 
-    <!-- bg-primary py-16 : fond bleu, padding vertical | text-center : tout centré -->
+      <!-- Ligne 2 – défile vers la droite -->
+      <div class="overflow-hidden">
+        <div class="ticker-r flex gap-6 w-max">
+          <!-- copie 1 -->
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Heineken</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Kronenbourg</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Leffe</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Laurent-Perrier</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Nicolas Feuillatte</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Evian</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Volvic</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Perrier</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Coca-Cola</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Red Bull</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Schweppes</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Orangina</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <!-- copie 2 -->
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Heineken</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Kronenbourg</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Leffe</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Laurent-Perrier</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Nicolas Feuillatte</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Evian</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Volvic</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Perrier</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Coca-Cola</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Red Bull</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Schweppes</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+          <span class="flex-shrink-0 bg-light border border-gray-200 text-gray-700 font-semibold text-sm px-6 py-3 rounded-full">Orangina</span>
+          <span class="flex-shrink-0 text-secondary self-center">·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
     <section class="bg-primary py-16 text-center">
       <div class="max-w-2xl mx-auto px-6">
-
-        <!-- data-aos="fade-up" : le CTA monte en fondu -->
         <h2 class="font-serif text-3xl font-bold text-white mb-4" data-aos="fade-up">
           Vous ne trouvez pas ce que vous cherchez ?
         </h2>
@@ -431,79 +391,19 @@
           Notre catalogue est bien plus large que ce que vous voyez ici.
           Contactez-nous pour une demande spécifique ou un devis personnalisé.
         </p>
-        <!-- bg-secondary hover:bg-yellow-600 : bouton jaune | text-white font-semibold : texte blanc gras -->
-        <!-- px-8 py-3 rounded-full : style pilule | transition-colors : animation au survol -->
-        <a href="contact.html"
-           class="inline-block bg-secondary hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full transition-colors">
+        <a href="contact.html" class="inline-block bg-secondary hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full transition-colors">
           Nous contacter
         </a>
-
       </div>
     </section>
 
+    <div id="site-footer"></div>
 
-    <!-- ============================================================
-         FOOTER – identique à index.html
-    ============================================================ -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-      <div class="max-w-6xl mx-auto px-6">
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-          <div>
-            <h4 class="text-white font-serif text-xl font-bold mb-4">
-              Mespoulet <span class="text-secondary">Distribution</span>
-            </h4>
-            <p class="leading-relaxed">
-              Grossiste en boissons à Limoges depuis 1999.<br />
-              Membre du réseau national C10.
-            </p>
-          </div>
-
-          <div>
-            <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Navigation</h4>
-            <ul class="flex flex-col gap-2">
-              <li><a href="index.html"    class="hover:text-white transition-colors">Accueil</a></li>
-              <li><a href="about.html"    class="hover:text-white transition-colors">L'entreprise</a></li>
-              <li><a href="produits.html" class="hover:text-white transition-colors">Nos produits</a></li>
-              <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
-              <li><a href="mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Coordonnées</h4>
-            <address class="not-italic flex flex-col gap-2">
-              <span>38 Rue Maurice Utrillo</span>
-              <span>87000 Limoges</span>
-              <a href="tel:+33XXXXXXXXX" class="hover:text-white transition-colors">05 55 34 51 30</a>
-            </address>
-          </div>
-
-        </div>
-
-        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
-          <p>© 2026 Mespoulet Distribution – Tous droits réservés</p>
-        </div>
-
-      </div>
-    </footer>
-
-    <button id="scroll-top-btn"
-            aria-label="Retour en haut de page"
-            class="fixed bottom-6 right-6 z-50 opacity-0 pointer-events-none transition-opacity duration-300 bg-primary hover:bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
-    <script src="js/scroll-top.js"></script>
-
-    <!-- AOS – Librairie d'animations au scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/animations.js"></script>
-
-    <!-- Transitions de page : fondu entrant/sortant entre les pages -->
+    <script src="js/filter.js"></script>
+    <script src="js/lightbox.js"></script>
     <script src="js/transitions.js"></script>
-    <!-- Bandeau RGPD : affiché si l'utilisateur n'a pas encore fait de choix -->
     <script src="js/cookies.js"></script>
-
   </body>
 </html>

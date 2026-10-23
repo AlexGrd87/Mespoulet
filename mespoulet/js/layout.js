@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
           Mespoulet <span class="text-secondary">Distribution</span>
         </h4>
         <p class="leading-relaxed">
-          Grossiste en boissons à Limoges depuis 1999.<br />
+          Grossiste en boissons à Limoges depuis 1995.<br />
           Membre du réseau national C10.
         </p>
       </div>

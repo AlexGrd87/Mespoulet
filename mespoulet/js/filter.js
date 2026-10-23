@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setActive(btn) {
     buttons.forEach(b => {
-      b.classList.remove('bg-primary', 'text-white');
-      b.classList.add('bg-white', 'text-gray-600');
+      b.classList.remove('is-active');
+      b.setAttribute('aria-pressed', 'false');
     });
-    btn.classList.remove('bg-white', 'text-gray-600');
-    btn.classList.add('bg-primary', 'text-white');
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
   }
+
+  buttons.forEach(b => b.setAttribute('aria-pressed', b.classList.contains('is-active')));
 
   function filterCards(filter) {
     cards.forEach(card => {

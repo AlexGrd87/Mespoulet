@@ -12,11 +12,14 @@
  *   once     : true = l'animation ne se joue qu'une seule fois (recommandé)
  *   offset   : distance en px avant le bord de la fenêtre pour déclencher
  *   easing   : courbe d'accélération de l'animation
+ *   disable  : désactive AOS (contenu affiché directement)
  */
 
 AOS.init({
-  duration: 700,          // chaque animation dure 700ms
+  duration: 600,          // assez court pour ne pas ralentir la lecture
   once: true,             // ne se rejoue pas si l'utilisateur remonte
   offset: 80,             // se déclenche quand l'élément est à 80px du bord bas de l'écran
-  easing: 'ease-out-cubic' // démarrage rapide, ralentissement progressif
+  easing: 'ease-out-cubic', // démarrage rapide, ralentissement progressif
+  // Respecte le réglage système « réduire les animations »
+  disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
 });

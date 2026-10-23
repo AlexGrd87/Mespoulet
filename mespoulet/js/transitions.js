@@ -16,6 +16,9 @@
 
 (function () {
 
+  // Pas de fondu si l'utilisateur a demandé à réduire les animations
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   // ── Injection de l'overlay ───────────────────────────────────────────
   // On crée le div dès que le script est parsé (avant DOMContentLoaded)
   // pour qu'il soit présent le plus tôt possible et éviter le flash.
@@ -25,13 +28,13 @@
   // Style inline minimal pour que l'overlay soit opaque AVANT que
   // Tailwind ne soit chargé (évite le flash de contenu).
   // fixed inset-0 : couvre tout l'écran | z-[99999] : au-dessus de tout
-  // bg-light : fond crème identique au body → transition imperceptible
+  // bg-paper : fond crème identique au body → transition imperceptible
   // pointer-events-none : n'intercepte pas les clics une fois transparent
   overlay.style.cssText = [
     'position:fixed',
     'inset:0',
     'z-index:99999',
-    'background-color:#F4F6FA',   // même couleur que bg-light Tailwind
+    'background-color:#FAF7F2',   // même couleur que bg-paper Tailwind
     'opacity:1',                  // opaque par défaut → page invisible au départ
     'transition:opacity 350ms ease',
     'pointer-events:none',

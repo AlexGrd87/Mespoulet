@@ -5,270 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact – Mespoulet Distribution</title>
 
-    <meta
-      name="description"
-      content="Contactez Mespoulet Distribution à Limoges. 38 Rue Maurice Utrillo, 87000 Limoges. Tél : 05 55 34 51 30. Formulaire de contact disponible en ligne."
-    />
-    <meta
-      name="keywords"
-      content="contact Mespoulet Distribution, grossiste boissons Limoges adresse, téléphone distributeur boissons Haute-Vienne"
-    />
+    <meta name="description" content="Contactez Mespoulet Distribution à Limoges. 38 rue Maurice Utrillo, 87000 Limoges. Tél : 05 55 34 51 30. Formulaire de contact disponible en ligne." />
+    <meta name="keywords" content="contact Mespoulet Distribution, grossiste boissons Limoges adresse, téléphone distributeur boissons Haute-Vienne" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Mespoulet Distribution" />
-    <link rel="icon" type="image/png" href="Images/logo-mespoulet.png" />
-    <link rel="apple-touch-icon" href="Images/logo-mespoulet.png" />
+    <meta name="theme-color" content="#FAF7F2" />
+    <link rel="icon" type="image/png" href="Images/logo-mespoulet-seul.png" />
+    <link rel="apple-touch-icon" href="Images/logo-mespoulet-seul.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Contact – Mespoulet Distribution" />
-    <meta
-      property="og:description"
-      content="Notre équipe est à votre écoute. Contactez Mespoulet Distribution au 05 55 34 51 30 ou via notre formulaire en ligne."
-    />
+    <meta property="og:description" content="Notre équipe est à votre écoute. Contactez Mespoulet Distribution au 05 55 34 51 30 ou via notre formulaire en ligne." />
     <meta property="og:image" content="Images/logo-mespoulet.png" />
     <meta property="og:locale" content="fr_FR" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/tailwind-config.js"></script>
     <script src="js/layout.js"></script>
+
+    <style>
+      .field { width: 100%; background: #FAF7F2; border: 1px solid #E4DCCF; border-radius: 1rem; padding: .85rem 1rem;
+               transition: border-color .2s, box-shadow .2s, background-color .2s; }
+      .field::placeholder { color: #A39B91; }
+      .field:focus { outline: none; background: #fff; border-color: #161412; box-shadow: 0 0 0 3px rgba(196,43,37,.25); }
+      /* Champ mal rempli : signalé seulement après interaction, au plus près du champ */
+      .field:user-invalid { border-color: #C42B25; background: #FBECEA; }
+      .field-label { display: block; font-size: .875rem; font-weight: 600; margin-bottom: .5rem; }
+    </style>
   </head>
 
-  <body class="bg-light text-gray-800">
+  <body class="bg-paper text-ink">
     <div id="site-header"></div>
 
-    <section class="relative h-72 flex items-center justify-center">
-      <div
-        class="absolute inset-0 bg-cover bg-center"
-        style="
-          background-image: url(&quot;https://images.unsplash.com/photo-1423666639041-f56000c27a9a?fit=crop&w=1920&h=600&q=80&quot;);
-        "
-      ></div>
-      <div class="absolute inset-0 bg-primary/80"></div>
-      <div class="relative z-10 text-center px-6">
-        <p class="text-secondary uppercase tracking-widest text-sm mb-3">
-          Parlons-nous
-        </p>
-        <h1 class="font-serif text-5xl font-bold text-white">Contactez-nous</h1>
-        <p class="mt-4 text-gray-300 text-lg">
-          Notre équipe est à votre écoute
-        </p>
-      </div>
-    </section>
+    <main>
+      <!-- En-tête -->
+      <section>
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-14 lg:pt-24 lg:pb-20 grid lg:grid-cols-12 gap-12 items-end">
+          <div class="lg:col-span-7">
+            <p class="eyebrow mb-7" data-aos="fade-up">Parlons-nous</p>
+            <h1 class="font-display font-medium tracking-tight text-[2.7rem] leading-[1.02] sm:text-6xl lg:text-7xl" data-aos="fade-up" data-aos-delay="80">
+              Une question, un projet ? <em class="italic font-normal text-brand">Écrivez-nous.</em>
+            </h1>
+          </div>
+          <p class="lg:col-span-5 text-lg text-muted leading-relaxed" data-aos="fade-up" data-aos-delay="160">
+            Notre équipe est à votre écoute pour une demande de devis, l'ouverture d'un compte
+            professionnel ou une simple question.
+          </p>
+        </div>
+      </section>
 
-    <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div data-aos="fade-right">
-            <p class="text-secondary uppercase tracking-widest text-sm mb-2">
-              Formulaire
-            </p>
-            <h2 class="font-serif text-3xl font-bold text-primary mb-8">
-              Envoyez-nous un message
-            </h2>
-            <form id="contact-form" class="space-y-6">
-              <div class="grid grid-cols-2 gap-4">
+      <section class="pb-24 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-8 items-start">
+
+          <!-- Formulaire -->
+          <div class="lg:col-span-7 bg-white border border-line rounded-[2rem] p-6 sm:p-10" data-aos="fade-up">
+            <h2 class="font-display text-3xl mb-8">Envoyez-nous un message</h2>
+            <form id="contact-form" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-sm font-semibold text-gray-700 mb-2"
-                    >Nom</label
-                  >
-                  <input
-                    type="text"
-                    name="nom"
-                    placeholder="Dupont"
-                    required
-                    class="w-full bg-light border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
-                  />
+                  <label for="nom" class="field-label">Nom</label>
+                  <input id="nom" type="text" name="nom" placeholder="Dupont" autocomplete="family-name" required class="field" />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-gray-700 mb-2"
-                    >Prénom</label
-                  >
-                  <input
-                    type="text"
-                    name="prenom"
-                    placeholder="Jean"
-                    required
-                    class="w-full bg-light border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
-                  />
+                  <label for="prenom" class="field-label">Prénom</label>
+                  <input id="prenom" type="text" name="prenom" placeholder="Jean" autocomplete="given-name" required class="field" />
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="email" class="field-label">Email</label>
+                  <input id="email" type="email" name="email" placeholder="jean.dupont@email.com" autocomplete="email" required class="field" />
+                </div>
+                <div>
+                  <label for="telephone" class="field-label">
+                    Téléphone <span class="text-muted font-normal">(optionnel)</span>
+                  </label>
+                  <input id="telephone" type="tel" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel" class="field" />
                 </div>
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="jean.dupont@email.com"
-                  required
-                  class="w-full bg-light border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
-                />
+                <label for="profil" class="field-label">Vous êtes</label>
+                <div class="relative">
+                  <select id="profil" name="profil" required class="field appearance-none cursor-pointer pr-10">
+                    <option value="">Sélectionnez votre profil</option>
+                    <option value="Professionnel">Un professionnel (restaurateur, caviste, hôtelier...)</option>
+                    <option value="Particulier">Un particulier</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                  <i class="fa-solid fa-chevron-down text-xs text-muted absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                  Téléphone
-                  <span class="text-gray-400 font-normal">(optionnel)</span>
-                </label>
-                <input
-                  type="tel"
-                  name="telephone"
-                  placeholder="06 XX XX XX XX"
-                  class="w-full bg-light border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
-                />
+                <label for="message" class="field-label">Message</label>
+                <textarea id="message" rows="5" name="message" placeholder="Décrivez votre besoin, votre demande de devis..." required class="field resize-none"></textarea>
               </div>
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2"
-                  >Vous êtes</label
-                >
-                <select
-                  name="profil"
-                  required
-                  class="w-full bg-light border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 transition appearance-none cursor-pointer"
-                >
-                  <option value="">Sélectionnez votre profil</option>
-                  <option value="Professionnel">
-                    Un professionnel (restaurateur, caviste, hôtelier...)
-                  </option>
-                  <option value="Particulier">Un particulier</option>
-                  <option value="Autre">Autre</option>
-                </select>
+              <div id="form-success" class="hidden bg-green-50 border border-green-200 text-green-800 rounded-2xl px-5 py-4 flex items-center gap-3" role="status">
+                <i class="fa-solid fa-circle-check text-green-600 text-xl"></i>
+                <p class="font-medium">Message envoyé ! Nous vous répondrons dans les plus brefs délais.</p>
               </div>
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2"
-                  >Message</label
-                >
-                <textarea
-                  rows="5"
-                  name="message"
-                  placeholder="Décrivez votre besoin, votre demande de devis..."
-                  required
-                  class="w-full bg-light border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/30 transition resize-none"
-                ></textarea>
+              <div id="form-error" class="hidden bg-brand-tint border border-brand/30 text-brand-dark rounded-2xl px-5 py-4 flex items-center gap-3" role="alert">
+                <i class="fa-solid fa-circle-exclamation text-xl"></i>
+                <p class="font-medium">Une erreur est survenue. Veuillez réessayer ou nous appeler directement.</p>
               </div>
-              <div
-                id="form-success"
-                class="hidden bg-green-50 border border-green-200 text-green-800 rounded-xl px-5 py-4 flex items-center gap-3"
-              >
-                <i class="fa-solid fa-circle-check text-green-500 text-xl"></i>
-                <p class="font-medium">
-                  Message envoyé ! Nous vous répondrons dans les plus brefs
-                  délais.
-                </p>
-              </div>
-              <div
-                id="form-error"
-                class="hidden bg-red-50 border border-red-200 text-red-800 rounded-xl px-5 py-4 flex items-center gap-3"
-              >
-                <i
-                  class="fa-solid fa-circle-exclamation text-red-500 text-xl"
-                ></i>
-                <p class="font-medium">
-                  Une erreur est survenue. Veuillez réessayer ou nous appeler
-                  directement.
-                </p>
-              </div>
-              <button
-                type="submit"
-                id="submit-btn"
-                class="w-full bg-primary hover:bg-blue-900 text-white font-semibold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+              <button type="submit" id="submit-btn" class="btn btn-brand w-full !py-4 disabled:opacity-50 disabled:cursor-not-allowed">
                 <i class="fa-solid fa-paper-plane"></i>
                 Envoyer le message
               </button>
             </form>
           </div>
 
-          <div data-aos="fade-left">
-            <p class="text-secondary uppercase tracking-widest text-sm mb-2">
-              Coordonnées
-            </p>
-            <h2 class="font-serif text-3xl font-bold text-primary mb-8">
-              Nous trouver
-            </h2>
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="fa-solid fa-location-dot text-primary"></i>
+          <!-- Coordonnées -->
+          <div class="lg:col-span-5 space-y-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-ink text-paper rounded-[2rem] p-8 sm:p-10">
+              <h2 class="font-display text-3xl mb-8">Nous trouver</h2>
+              <dl class="space-y-6">
+                <div class="flex gap-4">
+                  <dt class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-location-dot text-brand-soft"></i><span class="sr-only">Adresse</span>
+                  </dt>
+                  <dd>
+                    <p class="text-paper/55 text-sm">Adresse</p>
+                    <p class="mt-0.5">38 rue Maurice Utrillo<br />87000 Limoges</p>
+                  </dd>
                 </div>
-                <div>
-                  <p class="font-semibold text-gray-800 mb-1">Adresse</p>
-                  <p class="text-gray-600">
-                    38 Rue Maurice Utrillo<br />87000 Limoges
-                  </p>
+                <div class="flex gap-4">
+                  <dt class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-phone text-brand-soft"></i><span class="sr-only">Téléphone</span>
+                  </dt>
+                  <dd>
+                    <p class="text-paper/55 text-sm">Téléphone</p>
+                    <a href="tel:+33555345130" class="link-u mt-0.5 inline-block font-display text-2xl">05 55 34 51 30</a>
+                  </dd>
                 </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="fa-solid fa-phone text-primary"></i>
+                <div class="flex gap-4">
+                  <dt class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-regular fa-clock text-brand-soft"></i><span class="sr-only">Horaires</span>
+                  </dt>
+                  <dd class="flex-1">
+                    <p class="text-paper/55 text-sm">Horaires d'ouverture</p>
+                    <ul class="mt-1.5 space-y-1 text-sm">
+                      <li class="flex justify-between gap-4"><span>Lundi – Vendredi</span><span>8h00 – 18h00</span></li>
+                      <li class="flex justify-between gap-4"><span>Samedi</span><span>8h00 – 12h00</span></li>
+                      <li class="flex justify-between gap-4 text-paper/60"><span>Dimanche</span><span>Fermé</span></li>
+                    </ul>
+                  </dd>
                 </div>
-                <div>
-                  <p class="font-semibold text-gray-800 mb-1">Téléphone</p>
-                  <a
-                    href="tel:+33555345130"
-                    class="text-gray-600 hover:text-primary transition-colors"
-                    >05 55 34 51 30</a
-                  >
+                <div class="flex gap-4">
+                  <dt class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-network-wired text-brand-soft"></i><span class="sr-only">Réseau</span>
+                  </dt>
+                  <dd>
+                    <p class="text-paper/55 text-sm">Réseau</p>
+                    <p class="mt-0.5">Adhérent du groupement national C10</p>
+                  </dd>
                 </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="fa-solid fa-clock text-primary"></i>
-                </div>
-                <div>
-                  <p class="font-semibold text-gray-800 mb-1">
-                    Horaires d'ouverture
-                  </p>
-                  <div class="text-gray-600 space-y-1 text-sm">
-                    <p>
-                      Lundi – Vendredi :
-                      <span class="font-medium">8h00 – 18h00</span>
-                    </p>
-                    <p>
-                      Samedi : <span class="font-medium">8h00 – 12h00</span>
-                    </p>
-                    <p>Dimanche : <span class="text-gray-400">Fermé</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="fa-solid fa-network-wired text-primary"></i>
-                </div>
-                <div>
-                  <p class="font-semibold text-gray-800 mb-1">Réseau</p>
-                  <p class="text-gray-600">
-                    Membre du groupement national <strong>C10</strong>
-                  </p>
-                </div>
-              </div>
+              </dl>
             </div>
-            <div class="mt-10 rounded-2xl overflow-hidden shadow-md">
+
+            <div class="rounded-[2rem] overflow-hidden border border-line bg-sand">
               <iframe
+                title="Plan d'accès à Mespoulet Distribution, 38 rue Maurice Utrillo à Limoges"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1965.2410894941863!2d1.2882347403138048!3d45.845883325019614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f934f5b09b18b7%3A0xb4983a5841f29f59!2sMespoulet%20Distribution!5e0!3m2!1sfr!2sfr!4v1775376875953!5m2!1sfr!2sfr"
-                class="w-full h-64 block"
+                class="w-full h-72 block grayscale-[35%]"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-              >
-              </iframe>
+              ></iframe>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <div id="site-footer"></div>
 
@@ -277,7 +186,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Mespoulet Distribution",
-        "description": "Grossiste en boissons à Limoges depuis 1995. Membre du réseau C10.",
+        "description": "Grossiste en boissons à Limoges depuis 1999. Adhérent du réseau C10.",
         "telephone": "+33555345130",
         "address": {
           "@type": "PostalAddress",
@@ -289,13 +198,7 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "08:00",
             "closes": "18:00"
           },
